@@ -6,7 +6,6 @@ namespace App\Repositories;
 use App\Filters\NewsFilter;
 use App\Http\Controllers\Controller;
 use App\Models\News;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
