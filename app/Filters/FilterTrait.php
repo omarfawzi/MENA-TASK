@@ -18,13 +18,7 @@ trait FilterTrait {
 		foreach ( $this->filterFields as $field ) {
 			if ( $request->has( $field ) ) {
 				$sign = $field . '_sign';
-				if ( $request->has( $sign ) && ! in_array( $request->$sign, $this->parentSigns[ $field ] ) ) {
-					response()->json( [
-						'data'   => 'Invalid Sign , Available : ' . implode( ' , ', $this->parentSigns[ $field ] ),
-						'status' => Response::HTTP_NOT_ACCEPTABLE
-					], Response::HTTP_NOT_ACCEPTABLE )->send();
-					exit;
-				} else if ( $request->has( $sign ) && in_array( $request->$sign, $this->parentSigns[ $field ] ) ) {
+				if ( $request->has( $sign ) ) {
 					$query->whereDate( $field, $request->$sign, $request->$field );
 				} else {
 					$query->where( $field, $request->$field );

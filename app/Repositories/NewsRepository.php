@@ -22,7 +22,9 @@ class NewsRepository extends Controller implements BaseRepository {
 	public function all() {
 		$this->validate(request(),
 			[
-				'date'=>'nullable|date_format:Y-m-d'
+				'date'=>'nullable|date_format:Y-m-d',
+				'date_sign'=>'nullable|in:'.implode(',', $this->filter->dateAvailableSigns),
+				'title_sign'=>'nullable|in:'.implode(',', $this->filter->titleAvailableSigns),
 			]
 		);
 
