@@ -10,7 +10,7 @@
 #### APIs
 HTTP Method | Route | Name | Description | PARAMS OR BODY
 --- | --- | --- | --- | ---
-GET |	api/news | news.index | GET NEWS | 1 - paginate : for page size <br> 2- page : for page no. <br> 3- title : for filter by title <br> 4- title_sign : LIKE <br> 5- date : for filter by date must be in format Y-m-d <br> 6- date_sign : > , < , >= , <= , = <br> 7- sort : asc or desc <br> 8- orderBy[] : date and time / date or time 
+GET |	api/news | news.index | GET NEWS | 1 - paginate : for page size <br> 2- page : for page no. <br> 3- title : for filter by title <br> 4- title_sign : LIKE <br> 5- date : for filter by date must be in format Y-m-d <br> 6- date_sign : > , < , >= , <= , = <br> 7- sort : asc or desc <br> 8- orderBy[] : ex : enpoint?orderBy[]=date&orderBy[]=title or orderBy[]=title or orderBy[]=date 
 POST |	api/news |	news.store | POST SINGLE NEWS | 1- title <br> 2- description <br> 3- text <br> 4- date : Y-m-d format 
 GET |	api/news/{$id} |	news.show | SHOW SPECIFIC NEWS
 PATCH |	api/news/{$id} |	news.update | UPDATE SPECIFIC NEWS | 1- title <br> 2- description <br> 3- text <br> 4- date : Y-m-d format
